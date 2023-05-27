@@ -1,0 +1,33 @@
+A process is a unit of execution that has its own memory space
+Each instance of Java Virtual Machine(JVM) runs as process
+If we run a java app, and them we open another one, each process will have its own memory space in heap.
+The first Java app can't access the heap that belongs to the second java application.
+The heap isn't shared between them.
+They each have their own.
+A thread is a unit of execution within a process.
+Each process can have multiple threads.
+In java, every process has at least one thread, the main thread.
+Every java process has multiple system threads that handle tasks like memory management and I/O.
+Creating a thread doesn't require so many resources as a process.
+Every thread created by a process shares the process's memory and files.
+Each thread has its memory stack in heap. Thread stack is only dedicated for threads
+Each Java app runs only one process, and each process can run multiple threads.
+Every process has a heap, and every thread has a thread stack
+
+Advantages of using threads :
+- For performing a task which requires a long time(as a data query, or fetching a data from a website). If we use this
+from the main thread the application won't do anything else while it's loading. (the execution is suspended)
+This particular method would look like the application is freezing especially in a UI interface.
+To avoid this is particularly useful to create another thread and execute the long-running task.
+We can use this as a particularity for the user I/O in background.
+
+- For APIs. Sometimes we have to provide the code that will run when a method we've called reaches a certain point in its
+execution. In this instance, we usually don't create the thread. We pass in the code that we want to run on the thread.
+
+Concurrency is referring to an application doing more than one thing at a time.
+It means that progress can be made on more than one task.
+Ex: Downloading a data, while it draws a shape.
+Concurrency means that one task doesn't have to complete before another can start.
+Java provides thread-related classes so that we can create java concurrent applications.
+
+JVM will not guarantee an exact execution of the lines in order.
